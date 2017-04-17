@@ -2,6 +2,9 @@
 
 The aim of the *T\T\P* theme for the [Kirby CMS](https://getkirby.com) is to provide an easy to maintain publishing platform with direct search and filtering functionalities. *T\T\P* uses: Topics, Titles, Time, Abstracts and Authors to determine what Publications are shown based on the visitors' inputted queries, and, on top of that, allows these to be filtered by their Types.
 
+## Installation
+Replace the corresponding files and folders in a Kirby Installation with the files and folders from this repository.
+
 ## Configuration
 ### Accessing the panel
 To access the administration area of the *Kirby CMS*, called the panel, go to *websitename.com/panel*. An account with the username *Admin* and the password *password* has already been created. Obviously both the username and password of the account should be changed, for safety purposes.
