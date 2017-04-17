@@ -73,10 +73,10 @@ URL: github.com/dylandegeling/t-t-p
 <!-- 2.2 Search/Return icon -->
 
   <? if($page->isHomepage()): ?>
-    <a title="Home" class="H-form-btn trns-250 fa fa-search"></a>
+    <a title="Home" class="H-btn trns-250 fa fa-search"></a>
   <? else: ?>
     <a
-      class="H-form-btn trns-250 fa fa-arrow-left"
+      class="H-btn trns-250 fa fa-arrow-left"
       title="Go to homepage"
       href="<? echo $site->url() ?>"
     ></a>
@@ -87,7 +87,7 @@ URL: github.com/dylandegeling/t-t-p
   <input
     id="queryFilter"
     onkeyup="queryFilter()"
-    class="H-form-inp"
+    class="H-inp"
     type="text"
     name="q"
     value="<?php echo esc($query) ?>"

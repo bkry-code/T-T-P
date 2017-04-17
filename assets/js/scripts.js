@@ -169,12 +169,12 @@ $(".SB-lst-li--filter").click(function() {
 });
 
 // Change search icon when query input is focused.
-$(".H-form-inp").focus(function() {
-  $(".H-form-btn").addClass("H-form-btn--hl");
+$(".H-inp").focus(function() {
+  $(".H-btn").addClass("H-btn--hl");
 });
 
-$(".H-form-inp").focusout(function() {
-  $(".H-form-btn").removeClass("H-form-btn--hl");
+$(".H-inp").focusout(function() {
+  $(".H-btn").removeClass("H-btn--hl");
 });
 
 // Changing publication and wrapping publication content.

@@ -112,8 +112,6 @@ a:focus, a:hover {
 /* ----- 2.1 Header --------------------------------------------------------- */
 
 .H {
-  position: fixed;
-  top: 0;
   width: 85%;
   margin-left: -.075rem;
   padding: .5rem 0 .75rem;
@@ -125,13 +123,9 @@ a:focus, a:hover {
   display: none;
 }
 
-/* Form */
+/* Button */
 
-.H-form {}
-
-/* Form button */
-
-.H-form-btn {
+.H-btn {
   font-size: 1.125rem;
   text-align: left;
   float: left;
@@ -140,13 +134,13 @@ a:focus, a:hover {
   color: rgb(200,200,200);
 }
 
-.H-form-btn--hl {
+.H-btn--hl {
   color: rgb(25,25,25);
 }
 
 /* Form input */
 
-.H-form-inp {
+.H-inp {
   flex: left;
   font-size: 1.625rem;
   text-transform: lowercase;
@@ -154,23 +148,23 @@ a:focus, a:hover {
   width: calc(100% - 2rem);
 }
 
-.H-form-inp[type=text][disabled] {
+.H-inp[type=text][disabled] {
   opacity: 1;
 }
 
-.H-form-inp::-webkit-input-placeholder {
+.H-inp::-webkit-input-placeholder {
   text-transform: lowercase;
   opacity: 1;
   color: rgb(25,25,25);
 }
 
-.H-form-inp::-moz-placeholder {
+.H-inp::-moz-placeholder {
   text-transform: lowercase;
   opacity: 1;
   color: rgb(25,25,25);
 }
 
-.H-form-inp:-ms-input-placeholder {
+.H-inp:-ms-input-placeholder {
   text-transform: lowercase;
   opacity: 1;
   color: rgb(25,25,25);
@@ -195,14 +189,14 @@ a:focus, a:hover {
 
   /* Form button */
 
-  .H-form-btn {
+  .H-btn {
     font-size: 1.25rem;
     margin: .875rem 0 0 -2rem;
   }
 
   /* Form input */
 
-  .H-form-inp {
+  .H-inp {
     font-size: 2.875rem;
   }
 }
@@ -811,7 +805,6 @@ a:focus, a:hover {
 
 .pub-F-share-lst-li:nth-last-child(n+2)::after {
   content: ",";
-  margin-left: -.175rem;
 }
 
 /* Footer revisions */
