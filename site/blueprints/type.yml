@@ -1,0 +1,51 @@
+title: Type
+icon: newspaper-o
+pages:
+  template: Publication
+  sort: flip
+  num:
+    mode: date
+    field: time
+  limit: 100
+files: false
+options:
+  delete: true
+  url: false
+  preview: false
+  template: false
+fields:
+  name:
+    type: headline
+    label: Type — Name
+  title:
+    extends: title
+    label: Name
+  fontawesome:
+    type: headline
+    label: Type — Icon
+  icon:
+    extends: icon
+    placeholder: file-text-o
+  settings:
+    type: headline
+    label: Type — Settings
+  author:
+    extends: setting
+    label: Author
+    help: Show or hide the author in the feed and in the header of the publications.
+  time:
+    extends: setting
+    label: Publication date
+    help: Show or hide the publication date in the feed and in the header of the publications.
+  topic:
+    extends: setting
+    label: Topics
+    help: Show or hide the topics the footer of the publications.
+  sharing:
+    extends: setting
+    label: Sharing buttons
+    help: Show or hide sharing buttons in the footer of publications.
+  revision:
+      extends: setting
+      label: Last revision date
+      help: Show or hide the last revision date in the footer of the publications.

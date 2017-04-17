@@ -1,0 +1,906 @@
+@charset "UTF-8";
+
+/*
+Author: Dylan Degeling
+URL: dylandegeling.nl
+*/
+
+/* ===== 1 General settings ================================================= */
+
+/* ----- 1.1 Global --------------------------------------------------------- */
+
+html {
+  font-size: 19px;
+  line-height: 19px;
+  color: rgb(25,25,25);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+}
+
+body {
+  width: 85%;
+  max-width: 80rem;
+  margin: 0 auto;
+  background: rgb(250,250,250);
+}
+
+.author, .date {
+  white-space: nowrap;
+}
+
+
+/* ----- 1.2 Resets & normalisation ----------------------------------------- */
+
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Semantics */
+
+header, main, aside, section,
+article, footer, nav, summary, details,
+figure, figcaption {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Forms */
+
+button, form, input, option,
+select, textarea {
+  background-image: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  outline: 0;
+}
+
+
+/* ----- 1.3 Typography ----------------------------------------------------- */
+
+blockquote, figure, figcaption,
+h1, h2, h3, h4, h5, h6,
+p, ol, ul, li {
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+/* Links */
+
+a, a:active,
+a:focus, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ----- 1.4 Reusables ------------------------------------------------------ */
+
+/* Transitions */
+
+.trns-250 {
+  -webkit-transition-duration: 250ms;
+  -moz-transition-duration: 250ms;
+  -o-transition-duraertion: 250ms;
+  transition-duration: 250ms
+}
+
+.trns-500 {
+  -webkit-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  -o-transition-duration: .5s;
+  transition-duration: .5s
+}
+
+/* ===== 2 Site Layout ====================================================== */
+
+/* ----- 2.1 Header --------------------------------------------------------- */
+
+.H {
+  position: fixed;
+  top: 0;
+  width: 85%;
+  margin-left: -.075rem;
+  padding: .5rem 0 .75rem;
+  border-bottom: .075rem solid rgb(175,175,175);
+  background-color: rgb(250,250,250);
+}
+
+.H-title {
+  display: none;
+}
+
+/* Form */
+
+.H-form {}
+
+/* Form button */
+
+.H-form-btn {
+  font-size: 1.125rem;
+  text-align: left;
+  float: left;
+  width: 2rem;
+  padding-top: .875rem;
+  color: rgb(200,200,200);
+}
+
+.H-form-btn--hl {
+  color: rgb(25,25,25);
+}
+
+/* Form input */
+
+.H-form-inp {
+  flex: left;
+  font-size: 1.625rem;
+  text-transform: lowercase;
+  padding-top: .375rem;
+  width: calc(100% - 2rem);
+}
+
+.H-form-inp[type=text][disabled] {
+  opacity: 1;
+}
+
+.H-form-inp::-webkit-input-placeholder {
+  text-transform: lowercase;
+  opacity: 1;
+  color: rgb(25,25,25);
+}
+
+.H-form-inp::-moz-placeholder {
+  text-transform: lowercase;
+  opacity: 1;
+  color: rgb(25,25,25);
+}
+
+.H-form-inp:-ms-input-placeholder {
+  text-transform: lowercase;
+  opacity: 1;
+  color: rgb(25,25,25);
+}
+
+@media only screen and (min-width: 50rem) {
+  .H {
+    position: absolute;
+    width: 65%;
+    max-width: 60rem;
+    margin: 0;
+    padding: 1rem 0 .75rem;
+  }
+
+  .H-title {
+    font-size: .875rem;
+    display: block;
+    position: absolute;
+    margin-top: 5rem;
+    color: rgb(175,175,175);
+  }
+
+  /* Form button */
+
+  .H-form-btn {
+    font-size: 1.25rem;
+    margin: .875rem 0 0 -2rem;
+  }
+
+  /* Form input */
+
+  .H-form-inp {
+    font-size: 2.875rem;
+  }
+}
+
+
+/* ----- 2.2 Sidebar -------------------------------------------------------- */
+
+.SB {
+  display: none
+}
+
+@media only screen and (min-width: 50rem) {
+  .SB {
+    display: block;
+    float: left;
+    width: 20%;
+    margin: 9.5rem 2.5% 2rem -2rem;
+    padding-right: .25rem;
+  }
+
+  /* List */
+
+  .SB-lst {
+    line-height: 1.25rem;
+    float: left;
+    padding-right: .5rem;
+    list-style: none;
+  }
+
+  /* List title */
+
+  .SB-lst-title {
+    font-weight: 700;
+    margin: 0 0 .25rem 2rem;
+  }
+
+  /* List-item */
+
+  .SB-lst-li {
+    float: left;
+    min-width: 51%;
+    max-width: calc(100% - 2rem);
+    padding-bottom: 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .SB-lst-li--filter {
+    padding-bottom: .25rem;
+    white-space: nowrap;
+  }
+
+  /* List-item icon */
+
+  .SB-lst-li-ico {
+    float: left;
+    width: 2rem;
+    color: rgb(200,200,200);
+  }
+
+  .SB-lst a:hover .SB-lst-li-ico {
+    color: rgb(25,25,25);
+  }
+
+  .SB-lst-li-ico--check {
+    color: rgb(25,25,25);
+  }
+
+  /* List-item metadata */
+
+  .SB-lst-li-meta {
+    font-size: .75rem;
+    line-height: 1rem;
+    min-width: 50%;
+    white-space: normal;
+    margin-top: .125rem;
+    color: rgb(175,175,175);
+  }
+
+  .SB-lst-li-meta::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+
+/* ----- 2.3 Main ----------------------------------------------------------- */
+
+.M {
+  margin-top: 6rem
+}
+
+@media only screen and (min-width: 50rem) {
+  .M {
+    float: left;
+    width: 77.5%;
+    margin: 9.5rem 0 0 2rem;
+  }
+}
+
+
+/* ----- 2.4 Feed --------------------------------------------------------- */
+
+.feed {
+  float: left;
+  width: 100%;
+  margin-top: -2rem;
+  padding-bottom: 2rem;
+}
+
+/* Post */
+
+.feed-post {
+  width: 100%;
+  min-height: 100px;
+  padding: 2rem 0 1.5rem 0;
+  border-bottom: .075rem solid rgb(225,225,225);
+}
+
+/* Post icon */
+
+.feed-post-ico {
+  float: left;
+  width: 2rem;
+}
+
+/* Post header */
+
+.feed-post-H {
+  float: left;
+  width: calc(100% - 2rem);
+  margin: -.25rem 0 .5rem;
+}
+
+.feed-post-H-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.375rem;
+  margin-bottom: .25rem;
+}
+
+.feed-post-H-meta {
+  font-size: .75rem;
+  line-height: 1rem;
+  color: rgb(200,200,200);
+}
+
+.feed-post-H-meta::first-letter {
+  text-transform: capitalize
+}
+
+/* Post abstract */
+
+.feed-post-abst {
+  font-size: .875rem;
+  line-height: 1.25rem;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+/* Post list */
+
+.feed-post-lst {
+  display: none;
+}
+
+/* Post hint */
+
+.feed-post-hint {
+  font-size: .75rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+@media only screen and (min-width: 75rem) {
+  .feed {
+    margin-top: 0;
+  }
+
+  /* Post */
+
+  .feed-post {
+    float: left;
+    padding: 1.5rem 1.25rem 1.5rem;
+  }
+
+  .feed-post:hover {
+    background-color: rgb(235,235,235);
+  }
+
+  /* Post header */
+
+  .feed-post-H {
+    max-width: 25%;
+  }
+
+  /* Post abstract */
+
+  .feed-post-abst,
+  .feed-post-lst {
+    font-size: .9rem;
+    line-height: 1.25rem;
+    float: left;
+  }
+
+  .feed-post-abst {
+    margin-top: -.25rem;
+    width: 45%;
+  }
+
+  /* Post list */
+
+  .feed-post-lst {
+    font-size: .85rem;
+    line-height: 1.25rem;
+    list-style: none;
+    display: block;
+    white-space: nowrap;
+    max-width: 10%;
+    margin-left: 5%;
+  }
+
+  /* Post list-item */
+
+  .feed-post-lst-li {
+    text-indent: -2rem;
+    padding-left: 2rem;
+  }
+
+  /* Post list-item icon */
+
+  .feed-post-lst-li-ico {
+    color: rgb(225,225,225);
+    float: left;
+    width: 2rem;
+  }
+
+  /* Post hint */
+
+  .feed-post-hint {
+    display: none;
+  }
+}
+
+
+/* ----- 2.5 Footer --------------------------------------------------------- */
+
+.F {
+  float: right;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: .075rem solid rgb(25,25,25);
+}
+
+.F-nav,
+.F-logo,
+.F-area,
+.F-copy {
+  float: left;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+/* Navigation */
+
+.F-nav-lst {
+  list-style: none;
+}
+
+.F-nav-lst-li {
+  line-height: 1.375rem;
+  margin-bottom: .125rem;
+}
+
+.F-nav-lst-li a:hover {
+  border-bottom: .075rem solid rgb(25,25,25);
+}
+
+.F-nav-lst-li a.active {
+  font-weight: 700;
+  border-bottom: .075rem solid transparent;
+}
+.F-nav-lst-li a.active:hover {
+  font-weight: 700;
+  border-bottom: .075rem solid rgb(25,25,25);
+}
+
+/* Logo */
+
+.F-logo img {
+  height: 7.5rem;
+  width: auto;
+}
+
+/* Location */
+
+.F-area p {
+  font-style: italic;
+  line-height: 1.25rem;
+}
+
+/* Copyright */
+
+.F-copy p {
+  font-size: .75rem;
+  color: rgb(200,200,200);
+}
+
+@media only screen and (min-width: 50rem) {
+  .F {
+    width: 77.5%;
+    padding-bottom: 1rem;
+  }
+
+  .F-nav,
+  .F-area,
+  .F-copy {
+    float: right;
+    width: 62.5%;
+  }
+
+  /* Navigation */
+
+  .F-nav {
+    margin-bottom: 5.5rem;
+  }
+
+  .F-nav-lst {
+    float: right;
+  }
+
+  .F-nav-lst-li {
+    float: left;
+    margin: -.375rem 0 .5rem 1.25rem;
+  }
+
+  /* Logo */
+
+  .F-logo {
+    float: left;
+    width: auto;
+  }
+
+  .F-logo img {
+    height: 8rem;
+  }
+
+  /* Location */
+
+  .F-area {
+    margin-bottom: 0;
+  }
+
+  .F-area p {
+    text-align: right;
+  }
+
+  /* Copyright */
+
+  .F-copy p {
+    text-align: right;
+    margin-top: .25rem;
+  }
+}
+
+
+
+/* ===== 3 Publications ===================================================== */
+
+/* ----- 3.1 General -------------------------------------------------------- */
+
+.pub {
+  width: 100%;
+  max-width: 800px;
+}
+
+.pub-H, .pub-B, .pub-F {
+  float: left;
+  width: 100%;
+}
+
+/* Header */
+
+.pub-H {
+  max-width: 25rem;
+  margin-bottom: 1rem;
+}
+
+.pub-H-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  margin-bottom: .25rem
+}
+
+.pub-H-subtitle {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: .5rem;
+  color: rgb(175,175,175);
+}
+
+.pub-H-meta {
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+/* Body */
+
+.pub-B h3,
+.pub-B h4,
+.pub-B h5 {
+  margin-bottom: .5rem;
+}
+
+.pub-B h3 {
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  padding-top: 1rem;
+}
+
+.pub-B h4 {
+  font-size: 1.25rem;
+  line-height: 1.375rem;
+}
+
+.pub-B h5,
+.pub-B h6 {
+  line-height: 1.25rem;
+  margin-bottom: .125rem;
+}
+.pub-B h5 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pub-B h6 {
+  color: rgb(200,200,200);
+}
+
+.pub-B p, .pub-B ul, .pub-B ol {
+  line-height: 1.375rem;
+  margin-bottom: 1rem;
+}
+
+.pub-B p {
+  margin-bottom: 1rem;
+  line-height: 1.625rem;
+}
+
+.pub-B em,
+.pub-B i {
+  font-style: italic;
+}
+
+.pub-B b,
+.pub-B strong {
+  font-weight: 700;
+}
+
+.pub-B a,
+.pub-B a:active,
+.pub-B a:focus,
+.pub-B a:hover {
+  border-bottom: .1rem solid rgb(25,25,25);
+}
+
+.pub-B ol {
+  padding-left: 1.45rem;
+}
+
+.pub-B ul {
+  list-style: none;
+}
+
+.pub-B ul>li {
+  text-indent: -1rem;
+  padding-left: 1rem;
+}
+
+.pub-B ul>li:before {
+  content: "-";
+  text-indent: -0.25rem;
+  padding-right: .5rem;
+}
+
+.pub-B img {
+  width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+.pub-B figure {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.pub-B figcaption {
+  font-size: .85rem;
+  line-height: 1.125rem;
+  margin-top: -.175rem;
+  padding: .5rem 1rem;
+  color: rgb(100,100,100);
+  background-color: rgb(235,235,235);
+}
+
+.pub-B blockquote {
+  font-style: italic;
+  float: left;
+  width: 100%;
+  margin: .75rem 0 1.75rem;
+  padding: 1.25rem 1.5rem .5rem 2.5rem;
+  color: rgb(25,25,25);
+  background-color: rgb(235,235,235);
+  border-left: .25rem solid rgb(25,25,25);
+}
+
+.pub-B blockquote::before {
+  content: ",,";
+  font-size: 1.5rem;
+  float: left;
+  margin: -1.25rem .7rem 0 -1.5rem;
+}
+
+.pub-B code,
+.pub-B pre code {
+  font-family: monospace;
+  line-height: 1.5em;
+  color: rgb(235,235,235);
+}
+
+.pub-B code {
+  font-size: .8rem;
+  vertical-align: .075em;
+  padding: 0 .3rem 0;
+  background-color: rgb(25,25,25);
+}
+
+.pub-B pre code {
+  display: block;
+  font-size: .85rem;
+  padding: 1.5rem;
+  white-space: pre;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pub-B pre + figcaption  {
+  margin-top: 0;
+}
+
+.pub-B hr {
+  width: 1.25rem;
+  height: 1rem;
+  border: none;
+  margin: 0 0 2rem 0;
+  border-bottom: .125rem solid rgb(25,25,25);
+}
+
+/* Footer */
+
+.pub-F {
+  margin-top: 2rem;
+  padding: .375rem 0 2rem;
+  border-top: .075rem solid rgb(200,200,200);
+}
+
+/* Footer share */
+
+.pub-F-share {
+  font-size: .75rem;
+  float: left;
+  width: 100%;
+}
+
+.pub-F-share-lst {
+  list-style: none;
+  padding: 1.1rem 0 .5rem;
+}
+
+.pub-F-share-lst-title {
+  float: left;
+  margin-right: .5rem;
+}
+
+.pub-F-share-lst-li {
+  font-weight: 700;
+  list-style: none;
+  float: left;
+  margin-right: .375rem;
+}
+
+.pub-F-share-lst-li a {
+  border-bottom: none;
+}
+
+.pub-F-share-lst-li a:hover {
+  border-bottom: .075rem solid rgb(25,25,25);
+}
+
+.pub-F-share-lst-li:nth-last-child(n+2)::after {
+  content: ",";
+  margin-left: -.175rem;
+}
+
+/* Footer revisions */
+
+.pub-F-rev {
+  float: left;
+  margin: .75rem 25% .5rem 0;
+}
+
+.pub-F-rev p {
+  font-size: .75rem;
+  margin: 0;
+  padding: .75rem 1rem;
+  background-color: rgb(200,200,200);
+}
+
+/* Footer related */
+
+.pub-F-rltd {
+  float: left;
+  min-width: 51%;
+  margin-top: .75rem;
+}
+
+.pub-F-rltd-lst {
+  list-style: none;
+}
+
+.pub-F-rltd-lst-title {
+  font-size: .75rem;
+  width: 100%;
+}
+
+.pub-F-rltd-lst-ico {
+  margin-right: 1rem;
+}
+
+.pub-F-rltd-lst-li {
+  font-size: .75rem;
+  line-height: 1.25rem;
+  width: auto;
+  min-width: 51%;
+  text-indent: -1.5rem;
+  margin-top: .5rem;
+  padding: .75rem 1.25rem .75rem 4rem;
+  border: .1rem solid rgb(25,25,25);
+}
+
+.pub-F-rltd-lst-li:hover {
+  background-color: rgb(235,235,235);
+}
+
+/* Footer topics */
+.pub-F-topic {
+  float: left;
+  min-width: 51%;
+  margin-top: 1rem;
+}
+
+.pub-F-topic-lst {
+  font-size: .75rem;
+  list-style: none;
+  padding: 0;
+  color: rgb(200,200,200);
+}
+
+.pub-F-topic-lst-li {
+  float: left;
+  margin-right: .375rem;
+}
+
+.pub-F-topic-lst-li::before {
+  content: "#";
+  margin-right: .125rem
+}
+
+.pub-F-topic-lst-li:nth-last-child(n+2)::after {
+  content: ", "
+}
+
+@media only screen and (min-width: 50rem) {
+  .pub-B figure {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+}
+
+/* ----- 3.1 Errors --------------------------------------------------------- */
+
+.error .pub-H-title {
+  margin-bottom: -.5rem;
+}

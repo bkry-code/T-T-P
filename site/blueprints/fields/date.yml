@@ -1,0 +1,6 @@
+type: date
+label: Date
+help: Select the publication date.
+width: 1/3
+default: today
+required: true

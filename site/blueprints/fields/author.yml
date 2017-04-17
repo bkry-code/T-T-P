@@ -1,0 +1,5 @@
+type: user
+label: Author
+help: Select the author from the dropdown list.
+width: 2/3
+required: true

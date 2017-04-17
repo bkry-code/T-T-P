@@ -1,0 +1,6 @@
+type: textarea
+label: Abstract
+placeholder: Enter an abstract here...
+validate:
+      maxWords: 35
+help: Max. 35 words.

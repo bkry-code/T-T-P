@@ -1,0 +1,4 @@
+type: toggle
+text: on/off
+width: 2/3
+default: false

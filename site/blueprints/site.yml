@@ -1,0 +1,79 @@
+title: Site
+pages:
+  template: Type
+files: true
+fields:
+  siteH:
+    label: General information
+    type: headline
+  title:
+    extends: title
+    help: Enter the title of your website.
+  subtitle:
+    extends: subtitle
+    help: Enter the subtitle of your website.
+    required: true
+  description:
+    extends: description
+    help: Describe your website in 160 characters.
+    validate:
+      max: 160
+  keywords:
+    type: tags
+    label: Keywords
+    help: Separate keywords with a comma ( , ).
+  location:
+    type: text
+    label: Location
+    icon: globe
+    placeholder: Based in Rotterdam, The Netherlands.
+    help: Enter your address or bussiness location.
+  copyright:
+    type: toggle
+    label: Copyright
+    icon: copyright
+    text: on/off
+    help: Turn copyright statement on or off.
+  logoH:
+    type: headline
+    label: Logo and favicons
+  logo:
+    type: image
+    label: Logo
+    help: Upload a logo using the Site Files > Add button in the sidebar.
+  favicon:
+    type: image
+    label: Favicon (.ico)
+    help: Upload an .ico file using the Site Files > Add button in the sidebar.
+    width: 1/2
+  favicon32x32:
+    type: image
+    label: Favicon 32x32 (.png)
+    help: Upload a 32x32 .png using the Site Files > Add button in the sidebar.
+    width: 1/2
+  favicon16x16:
+    type: image
+    label: Favicon 16x16 (.png)
+    help: Upload a 16x16 .png file using the Site Files > Add button in the sidebar.
+    width: 1/2
+  error:
+    type: headline
+    label: Error messages
+  contentErrorTitle:
+    type: text
+    label: Publication does not exist
+    placeholder: Sorry...
+    width: 1/2
+  feedErrorTitle:
+    type: text
+    label: No publication matches filters
+    placeholder: Sorry...
+    width: 1/2
+  contentErrorText:
+    type: textarea
+    placeholder: The page does not exist...
+    width: 1/2
+  feedErrorText:
+    type: textarea
+    placeholder: No publications match the filters...
+    width: 1/2

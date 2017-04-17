@@ -1,0 +1,6 @@
+type: select
+options: query
+query:
+  page: /
+  fetch: grandchildren
+width: 1/2

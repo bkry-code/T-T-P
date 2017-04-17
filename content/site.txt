@@ -1,0 +1,53 @@
+Title: T\T\P
+
+----
+
+Subtitle: A simple publishing theme for the Kirby CMS.
+
+----
+
+Description: 
+
+----
+
+Keywords: 
+
+----
+
+Location: 
+
+----
+
+Copyright: false
+
+----
+
+Logo: 
+
+----
+
+Favicon: 
+
+----
+
+Favicon32x32: 
+
+----
+
+Favicon16x16: 
+
+----
+
+Contenterrortitle: Hi,
+
+----
+
+Contenterrortext: This is an error page. You can change this text in the site options of the panel.
+
+----
+
+Feederrortitle: Hi,
+
+----
+
+Feederrortext: You filtered the feed so much that there is nothing left to show. You can change this text in the site options of the panel.

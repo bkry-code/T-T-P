@@ -1,0 +1,6 @@
+type: text
+label: Font Awesome icon
+icon: font-awesome
+help: Enter the name of the icon as indicated on fontawesome.io/icons.
+width: 2/3
+required: true

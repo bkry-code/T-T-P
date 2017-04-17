@@ -1,0 +1,27 @@
+title: Publication
+icon: file-text-o
+pages: false
+fields:
+  metadata:
+    type: headline
+    label: Publication — Metadata
+  title: title
+  subtitle: subtitle
+  time: date
+  author: author
+  topics: topics
+  abstract: abstract
+  content:
+    type: headline
+    label: Publication — Text
+  text:
+    extends: text
+  related:
+    type: headline
+    label: Publication — Related Content
+    help: Choose a publication from the dropdown list.
+  related1: related
+  related2: related
+  related3: related
+  related4: related
+  related5: related
