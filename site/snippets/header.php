@@ -3,7 +3,7 @@
 
 <!--
 Author: Dylan Degeling
-URL: dylandegeling.nl
+URL: github.com/dylandegeling/t-t-p
 -->
 
 <!-- 1 Head
