@@ -56,5 +56,3 @@ Publications are written in *Kirby CMS* flavoured Markdown - of which documentat
 
 ## Updates
 The *T\T\P* theme was build for [my own website](https://dylandegeling.nl), thus it is possible that there will be updates somewhere in the future (no promises).
-
-— Dylan Degeling
