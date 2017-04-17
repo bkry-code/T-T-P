@@ -52,6 +52,6 @@ Publications are sub-pages of Types and are, therefore, created inside of a Type
 Publications are written in *Kirby CMS* flavoured Markdown - of which documentation can be found [here](https://getkirby.com/docs/content/text).
 
 ## Updates
-The *T\T\P* theme was build for [my own website](https://dylandegeling.nl), thus it is possible that there will be updates somewhere in the future (but no promises). The latest version of the source code will be published to [the GitHub page](https:github.com/dylandegeling/t-t-p) under the GNU General Public License version 3.
+The *T\T\P* theme was build for [my own website](https://dylandegeling.nl), thus it is possible that there will be updates somewhere in the future (no promises).
 
 — Dylan Degeling
