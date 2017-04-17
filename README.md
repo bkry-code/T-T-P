@@ -1,6 +1,6 @@
 # T\T\P
 
-The aim of the *T\T\P* theme for the *(link: https://getkirby.com text: Kirby CMS)* is to provide an easy to maintain publishing platform with direct search and filtering functionalities. *T\T\P* uses: Topics, Titles, Time, Abstracts and Authors to determine what Publications are shown based on the visitors' inputted queries, and, on top of that, allows these to be filtered by their Types.
+The aim of the *T\T\P* theme for the [Kirby CMS](https://getkirby.com) is to provide an easy to maintain publishing platform with direct search and filtering functionalities. *T\T\P* uses: Topics, Titles, Time, Abstracts and Authors to determine what Publications are shown based on the visitors' inputted queries, and, on top of that, allows these to be filtered by their Types.
 
 ## Configuration
 ### Accessing the panel
@@ -27,7 +27,7 @@ Types can be seen as a combination of folders and categories. When creating a pu
 Types can be added from the Dashboard by adding a page - the Type template will automatically be selected. There is one Type that is a bit more special than the other Types: Pages.  Publications that belong to the Pages Type will also be added to the footer of the website. It is possible to delete the Pages Type just like any other Type. In order to delete a Type, all their publications must first be removed. The name of a Type can be changed at all times.
 
 ### Settings
-T\T\P uses the (link: http://fontawesome.io/ text: Font Awesome Icons). You can change the icon of a Type by entering the name of the icon as shown on this webpage: (link: http://fontawesome.io/icons text: fontawesome.io/icons).
+T\T\P uses the [Font Awesome Icons](http://fontawesome.io/). You can change the icon of a Type by entering the name of the icon as shown on this webpage: [fontawesome.io/icons](http://fontawesome.io/icons).
 
 Each Type also has several display settings that can be altered for the Publications that are contained within. These are:
 
@@ -49,9 +49,9 @@ Publications are sub-pages of Types and are, therefore, created inside of a Type
 - Text;
 - Related content.
 
-Publications are written in *Kirby CMS* flavoured Markdown -  of which documentation can be found (link:https://getkirby.com/docs/content/text text:here).
+Publications are written in *Kirby CMS* flavoured Markdown - of which documentation can be found [here](https://getkirby.com/docs/content/text).
 
 ## Updates
-The *T\T\P* theme was build for (link:https://dylandegeling.nl text: my own website), thus it is possible that there will be updates somewhere in the future (but no promises). The latest version of the source code will be published to (link:https:github.com/dylandegeling/t-t-p text:the GitHub page) under the GNU General Public License version 3.
+The *T\T\P* theme was build for [my own website](https://dylandegeling.nl), thus it is possible that there will be updates somewhere in the future (but no promises). The latest version of the source code will be published to [the GitHub page](https:github.com/dylandegeling/t-t-p) under the GNU General Public License version 3.
 
 — Dylan Degeling
