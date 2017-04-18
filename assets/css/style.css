@@ -24,10 +24,6 @@ body {
   background: rgb(250,250,250);
 }
 
-.author, .date {
-  white-space: nowrap;
-}
-
 
 /* ----- 1.2 Resets & normalisation ----------------------------------------- */
 
@@ -105,6 +101,10 @@ a:focus, a:hover {
   -moz-transition-duration: .5s;
   -o-transition-duration: .5s;
   transition-duration: .5s
+}
+
+.author, .date {
+  white-space: nowrap;
 }
 
 /* ===== 2 Site Layout ====================================================== */
