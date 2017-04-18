@@ -53,9 +53,44 @@ URL: github.com/dylandegeling/t-t-p
 
 <!-- 1.4 Stylesheets -->
 
-<? echo css('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700')
-      . css('https://use.fontawesome.com/7cbec18174.css')
-      . css('assets/css/style.css') ?>
+  <? echo css('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700')
+        . css('https://use.fontawesome.com/7cbec18174.css')
+        . css('assets/css/style.css') ?>
+
+<!-- 1.5 Microdata -->
+  <? if($page->isHomepage()): ?>
+    <? foreach($posts as $post): ?>
+      <script type="application/ld+json">
+        {
+        "@context" : "http://schema.org",
+        "@type" : "Article",
+        "name" : "<? echo $post->title() ?>",
+        "author" : {
+          "@type" : "Person",
+          "name" : "<? echo $site->user( $post->author() )->firstName() . ' ' . $site->user( $post->author() )->lastName() ?>"
+        },
+        "datePublished" : "<? echo $post->date('F j, Y', 'time') ?>",
+        "description" : "<? echo strip_tags($post->abstract()->kt()) ?>"
+      }
+      </script>
+    <? endforeach ?>
+  <? elseif ($page->template() == "publication" ): ?>
+    <script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Article",
+        "name" : "<? echo $page->title() ?>",
+        "headline" : "<? echo $page->subtitle() ?>"
+        "author" : {
+          "@type" : "Person",
+          "name" : "<? echo $site->user( $page->author() )->firstName() . ' ' . $site->user( $page->author() )->lastName() ?>"
+        },
+        "datePublished" : "<? echo $page->date('F j, Y', 'time') ?>",
+        "dateModified" : "<? echo $page->modified('F j, Y') ?>",
+        "articleBody" : "<? echo strip_tags($page->text()->kt()) ?>"
+      }
+    </script>
+  <? endif ?>
 
 </head>
 
