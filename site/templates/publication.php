@@ -47,7 +47,7 @@
 <!-- 4.2 Body -->
 
     <section class="pub-B">
-      <? echo $page->text()->kirbytext(); ?>
+      <? echo $page->text()->kt() ?>
     </section>
 
 <!-- 4.3 Footer -->
