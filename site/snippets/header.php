@@ -59,35 +59,37 @@ URL: github.com/dylandegeling/t-t-p
 
 <!-- 1.5 Microdata -->
   <? if($page->isHomepage()): ?>
-    <? foreach($posts as $post): ?>
-      <script type="application/ld+json">
-        {
-        "@context" : "http://schema.org",
-        "@type" : "Article",
-        "name" : "<? echo $post->title() ?>",
-        "author" : {
-          "@type" : "Person",
-          "name" : "<? echo $site->user( $post->author() )->firstName() . ' ' . $site->user( $post->author() )->lastName() ?>"
-        },
-        "datePublished" : "<? echo $post->date('F j, Y', 'time') ?>",
-        "description" : "<? echo strip_tags($post->abstract()->kt()) ?>"
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "url": "<? echo $site->url() ?>",
+          "name": "<? echo $site->subtitle() ?>",
+          "description": "<? echo $site->description() ?>",
+          "publisher": "<? echo $site->title() ?>"
       }
-      </script>
-    <? endforeach ?>
+    </script>
+
   <? elseif ($page->template() == "publication" ): ?>
     <script type="application/ld+json">
       {
         "@context" : "http://schema.org",
         "@type" : "Article",
-        "name" : "<? echo $page->title() ?>",
-        "headline" : "<? echo $page->subtitle() ?>"
+        "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "<? $site->url() ?>"
+        },
+        "headline" : "<? echo $page->title() ?>",
+        "publisher" : "<? echo $site->title()?>",
+        "datePublished" : "<? echo $page->date('F j, Y', 'time') ?>",
+        "dateModified" : "<? echo $page->modified('F j, Y') ?>",
+        "articleBody" : "<? echo strip_tags($page->text()->kt()) ?>",
         "author" : {
           "@type" : "Person",
           "name" : "<? echo $site->user( $page->author() )->firstName() . ' ' . $site->user( $page->author() )->lastName() ?>"
-        },
-        "datePublished" : "<? echo $page->date('F j, Y', 'time') ?>",
-        "dateModified" : "<? echo $page->modified('F j, Y') ?>",
-        "articleBody" : "<? echo strip_tags($page->text()->kt()) ?>"
+        }
       }
     </script>
   <? endif ?>
